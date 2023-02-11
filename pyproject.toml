@@ -24,8 +24,7 @@ dependencies = [
 Home="https://github.com/retospect/wibble"
 
 [project.scripts]
-blarg = "wibble:blarg"
-bl = "wibble:blarg"
+blarg = "wibble:wibble"
 
 [tool.bumpver]
 current_version = "0.0.1"
