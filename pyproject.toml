@@ -1,0 +1,41 @@
+[build-system]
+requires = ["flit", "bumpver"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "wibble"
+authors = [
+    {name = "Joe Schmoe", email = "JoeSchmoe@example.com"},
+]
+description = "Minimal python project that exposes a commandline feature"
+readme = "README.md"
+requires-python = ">=3.9"
+version = "0.0.1"
+keywords = ["example"]
+license = {text = "GPL-3"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "wheel",
+]
+
+[project.urls]
+Home="https://github.com/retospect/wibble"
+
+[project.scripts]
+blarg = "wibble:blarg"
+bl = "wibble:blarg"
+
+[tool.bumpver]
+current_version = "0.0.1"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = true
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"src/wibble/__init__.py" = ["{version}"]
+
