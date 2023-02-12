@@ -11,3 +11,11 @@ class Wibble:
 
 def blarg():
     print("Blarg 3 is activated")
+
+
+def wibble():
+    print("wibbling")
+
+
+if __name__ == "__main__":
+    print("in wibble")

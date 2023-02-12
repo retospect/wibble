@@ -11,6 +11,8 @@ def test_ph_help():
 
 
 def test_phronesitron_help():
-    p = Popen([sys.executable, "-m", "blarg", "--help"], stdout=PIPE, stderr=STDOUT)
+    p = Popen([sys.executable, "-m", "wibble"], stdout=PIPE, stderr=STDOUT)
     out, _ = p.communicate()
-    assert "activated" in out.decode("utf-8", "replace")
+    niceout = out.decode("utf-8", "in wibble")
+    print(niceout)
+    assert "activated" in niceout

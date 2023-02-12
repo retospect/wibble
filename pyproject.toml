@@ -1,30 +1,20 @@
 [build-system]
-requires = ["flit", "bumpver"]
-build-backend = "flit_core.buildapi"
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
 
-[project]
+[tool.poetry]
 name = "wibble"
-authors = [
-    {name = "Joe Schmoe", email = "JoeSchmoe@example.com"},
-]
+authors = ["Joe Schmoe"]
 description = "Minimal python project that exposes a commandline feature"
 readme = "README.md"
-requires-python = ">=3.9"
 version = "0.0.1"
 keywords = ["example"]
-license = {text = "GPL-3"}
-classifiers = [
-    "Programming Language :: Python :: 3",
-]
-dependencies = [
-    "wheel",
-]
+license = "GPL-3"
+classifiers = [ "Programming Language :: Python :: 3", ]
+homepage="https://github.com/retospect/wibble"
 
-[project.urls]
-Home="https://github.com/retospect/wibble"
-
-[project.scripts]
-blarg = "wibble:wibble"
+[tool.poetry.scripts]
+wibble = "wibble.wobble:wobble"
 
 [tool.bumpver]
 current_version = "0.0.1"
