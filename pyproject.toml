@@ -14,7 +14,8 @@ classifiers = [ "Programming Language :: Python :: 3", ]
 homepage="https://github.com/retospect/wibble"
 
 [tool.poetry.scripts]
-wibble = "wibble.wobble:wobble"
+# fafa: cmd; wibble: package; wobble: .py; warble: method
+fafa = "wibble.wobble:warble"
 
 [tool.bumpver]
 current_version = "0.0.1"

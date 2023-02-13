@@ -1,5 +1,5 @@
 #! python3
 
 
-def wobble():
-    print("In wobble")
+def warble():
+    print("In warble")
