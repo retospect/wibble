@@ -17,4 +17,6 @@ pip uninstall -y wibble
 python -m pip cache purge
 
 pip install wibble
+
+pip install --force-reinstall dist/wibble-*.whl
 ```

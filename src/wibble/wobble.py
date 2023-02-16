@@ -1,9 +1,9 @@
 #! python3
 
-from wibble import Wibble
+from wibble.warble import Warble
 
-def warble():
-    print("In warble2")
-    other = Wibble()
-    other.main_blarg()
+def wobble():
+    print("Wobbling")
+    other = Warble()
+    other.doIt()
 

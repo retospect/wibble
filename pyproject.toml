@@ -15,7 +15,7 @@ homepage="https://github.com/retospect/wibble"
 
 [tool.poetry.scripts]
 # fafa: cmd; wibble: package; wobble: .py; warble: method
-fafa = "wibble.wobble:warble"
+fafa = "wibble.wobble:wobble"
 
 [tool.bumpver]
 current_version = "0.0.2"
