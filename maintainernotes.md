@@ -18,5 +18,5 @@ python -m pip cache purge
 
 pip install wibble
 
-pip install --force-reinstall dist/wibble-*.whl
+pip install --force-reinstall dist/*.whl
 ```
