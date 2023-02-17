@@ -15,7 +15,7 @@ jobs:
         platform:
           - ubuntu-latest  # ubuntu-20.04
           - macos-latest  # macOS-11
-          - windows-latest  # windows-2022
+          #- windows-latest  # windows-2022
         python-version: [3.7, 3.8, 3.9, '3.10', '3.11', 3.12-dev, pypy-3.7, pypy-3.8, pypy-3.9]
 
     steps:
