@@ -4,7 +4,10 @@
 
 A minimalist template for a python package.
 
-Provides the bl and the blarg commands.
+Provides the bl and the blarg commands, 
+and does basic continuous integraton testing on github.
+
+Make a copy of the project, and fix the replacements below.
 
 ## Things to replace
 
