@@ -1,5 +1,7 @@
 # Maintainer's build notes
 
+How to [set up to publish a package](https://towardsdatascience.com/how-to-publish-a-python-package-to-pypi-using-poetry-aa804533fc6f).
+
 ```
 git clean -fdx --dry-run
 tox
