@@ -7,7 +7,7 @@ name = "wibble"
 authors = ["Joe Schmoe"]
 description = "Minimal python project that exposes a commandline feature"
 readme = "README.md"
-version = "0.0.5"
+version = "0.0.6"
 keywords = ["example"]
 license = "GPL-3"
 classifiers = [ "Programming Language :: Python :: 3", ]
@@ -18,7 +18,7 @@ homepage="https://github.com/retospect/wibble"
 fafa = "wibble.wobble:wobble"
 
 [tool.bumpver]
-current_version = "0.0.5"
+current_version = "0.0.6"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
