@@ -5,7 +5,7 @@ on:
   push:
   pull_request:
   schedule: # Check monthly
-    - cron: '6 4 3 * *'
+    - interval: "monthly"
 
 jobs:
   build:
