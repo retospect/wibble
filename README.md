@@ -8,11 +8,12 @@ A minimalist template for a Python package using modern tooling:
 ## Quick start
 
 ```bash
-uv run pytest          # run tests
-uv run ruff check .    # lint
-uv run ruff format .   # format
-uv run mypy src tests  # type check
-uv run fafa            # run the CLI entry point
+uv run pre-commit install  # set up git hooks (once)
+uv run pytest              # run tests
+uv run ruff check .        # lint
+uv run ruff format .       # format
+uv run mypy src tests      # type check
+uv run fafa                # run the CLI entry point
 ```
 
 ## Things to replace
