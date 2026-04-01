@@ -1,1 +1,3 @@
-__version__ = "0.0.7"
+from importlib.metadata import version
+
+__version__ = version("wibble")

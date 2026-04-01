@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "wibble"
-version = "0.0.7"
+version = "1.0.0"
 description = "Minimal python project that exposes a commandline feature"
 readme = "README.md"
 license = "GPL-3.0-only"
@@ -31,7 +31,6 @@ dev = [
     "pytest>=8",
     "ruff>=0.11",
     "mypy>=1.15",
-    "bump-my-version>=1",
 ]
 
 [tool.ruff]
@@ -49,19 +48,3 @@ check_untyped_defs = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-
-[tool.bump-my-version]
-current_version = "0.0.7"
-commit = true
-tag = true
-push = true
-
-[[tool.bump-my-version.files]]
-filename = "pyproject.toml"
-search = 'version = "{current_version}"'
-replace = 'version = "{new_version}"'
-
-[[tool.bump-my-version.files]]
-filename = "src/wibble/__init__.py"
-search = '{current_version}'
-replace = '{new_version}'
