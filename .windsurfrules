@@ -1,0 +1,25 @@
+# Python project conventions
+
+## Package manager
+- Use `uv` for all dependency and environment operations.
+- Run tools via `uv run` (e.g. `uv run pytest`, `uv run ruff check .`).
+- Never use `pip install` directly. Never use `python -m pip`.
+- Add dependencies with `uv add <pkg>`. Add dev deps with `uv add --group dev <pkg>`.
+- Bump version with `uv version <X.Y.Z>`. Version lives only in `pyproject.toml`.
+
+## Code quality
+- Lint with `ruff check .` and format with `ruff format .`. Never use black, isort, or flake8.
+- Type check with `mypy src tests`.
+- Run `uv run pre-commit install` after cloning to enable git hooks.
+
+## Testing
+- Run tests with `uv run pytest`. Tests live in `tests/`.
+
+## CI & releases
+- All GitHub Actions must be pinned by commit SHA with a version comment.
+- Publish via trusted publishing: tag → GitHub Release → CI builds + publishes.
+- Never commit API keys, tokens, or secrets.
+
+## Project structure
+- src layout: source in `src/<package>/`.
+- All tool config in `pyproject.toml` — no separate `.cfg`, `.ini`, or `.toml` files for tools.
