@@ -1,5 +1,3 @@
-#! python3
-
 from wibble.warble import Warble
 
 

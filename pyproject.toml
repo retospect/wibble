@@ -1,33 +1,67 @@
 [build-system]
-requires = ["poetry-core>=1.1.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "wibble"
-authors = ["Joe Schmoe"]
-maintainers = ["Joe Schmoe"]
+version = "0.0.7"
 description = "Minimal python project that exposes a commandline feature"
 readme = "README.md"
-version = "0.0.6"
+license = "GPL-3.0-only"
+requires-python = ">=3.11"
+authors = [{ name = "Joe Schmoe" }]
 keywords = ["example"]
-license = "GPL-3"
-classifiers = [ "Programming Language :: Python :: 3", ]
-homepage = "https://github.com/retospect/wibble"
-repository = "https://github.com/retospect/wibble" 
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
 
-[tool.poetry.scripts]
+[project.urls]
+Homepage = "https://github.com/retospect/wibble"
+Repository = "https://github.com/retospect/wibble"
+
+[project.scripts]
 # fafa: cmd; wibble: package; wobble: .py; warble: method
 fafa = "wibble.wobble:wobble"
 
-[tool.bumpver]
-current_version = "0.0.6"
-version_pattern = "MAJOR.MINOR.PATCH"
-commit_message = "bump version {old_version} -> {new_version}"
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.11",
+    "mypy>=1.15",
+    "bump-my-version>=1",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.bump-my-version]
+current_version = "0.0.7"
 commit = true
 tag = true
 push = true
 
-[tool.bumpver.file_patterns]
-"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
-"src/wibble/__init__.py" = ["{version}"]
+[[tool.bump-my-version.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
 
+[[tool.bump-my-version.files]]
+filename = "src/wibble/__init__.py"
+search = '{current_version}'
+replace = '{new_version}'

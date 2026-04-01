@@ -1,5 +1,5 @@
-from subprocess import Popen, PIPE, STDOUT
 import os
+from subprocess import PIPE, STDOUT, Popen
 
 
 def test_commandline_installed():

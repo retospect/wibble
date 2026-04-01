@@ -1,23 +1,24 @@
 # Maintainer's build notes
 
-How to [set up to publish a package](https://towardsdatascience.com/how-to-publish-a-python-package-to-pypi-using-poetry-aa804533fc6f).
+Publishing uses [trusted publishing](https://docs.pypi.org/trusted-publishers/) via GitHub Actions — no API tokens needed.
 
-```
+## Release workflow
+
+```bash
 git clean -fdx --dry-run
-tox
-git commit 
-bumpver update --patch
-poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
+uv run ruff check .
+uv run pytest
+git commit -am "prep release"
+bump-my-version bump patch   # or: minor / major
+git push && git push --tags
 ```
 
-gpg sign soon!
+Then create a **GitHub Release** from the tag — the CI workflow builds and publishes to PyPI automatically.
 
-## test:
-```
-pip uninstall -y wibble
-python -m pip cache purge
+## Local testing
 
-pip install wibble
-
-pip install --force-reinstall dist/*.whl
+```bash
+uv build
+uv pip install --force-reinstall dist/*.whl
+fafa
 ```
