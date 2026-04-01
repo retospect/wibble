@@ -41,3 +41,4 @@ Then create a GitHub Release from the tag. CI publishes to PyPI automatically.
 - All tool config goes in pyproject.toml. No .cfg, .ini, or separate .toml files.
 - GitHub Actions must be pinned by commit SHA.
 - Never commit secrets.
+- Always use ssh for git push/pull
